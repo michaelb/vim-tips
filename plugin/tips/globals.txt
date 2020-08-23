@@ -1,0 +1,6 @@
+:g/one\|two/     : list lines containing "one" or "two"
+:g/^\s*$/d       : delete all blank lines
+:g/green/d       : delete all lines containing "green"
+:v/green/d       : delete all lines not containing "green"
+:v/./.,/./-1join : compress empty lines
+:g/search_pattern/#              : display with line numbers (YOU WANT THIS!)

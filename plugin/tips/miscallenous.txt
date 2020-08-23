@@ -1,0 +1,6 @@
+:w! sudo tee %      :write as root (ask password)
+CTRL + w + =      :resize splits equally
+[[      : jump to function start
+:new file.txt     : open file.txt in new split
+gt      : show next tab
+=%      : indent code between parenthesis

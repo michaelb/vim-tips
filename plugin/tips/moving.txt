@@ -1,0 +1,3 @@
+CTRL + F     : move one page down (Forward)
+CTRL + B     : move one page up (Backward)
+zz     : recenter page around cursor
