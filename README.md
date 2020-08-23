@@ -16,3 +16,7 @@ Plug 'michaelb/vim-tips'
 
 If you want, you can add your own tips by modifying the files in the tips folder.
 You may find them on your own system (probably in your plugin manager's files), but to simplify that I suggest forking my repo and add your own changes in a version controlled repo.
+
+## Important note
+
+If you are using a autoload session restore (from mksession) it displays a message and therefore hide the vim-tips message
