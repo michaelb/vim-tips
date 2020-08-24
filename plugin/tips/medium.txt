@@ -29,3 +29,4 @@ CTRL + ]     : jump to definition of function under cursor (need tags)
 "_d  (motion)   : delete without destroying default buffer contents ex: "_dd
 g<C-G>     :count words/lines in file
 :sav new_name     : save file as filename
+CTRL + w + w ....    : cycle splits
