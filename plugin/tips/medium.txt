@@ -20,7 +20,7 @@ CTRL-R=5*5    : insert 25 into text
 G=gg          : auto (re)indent entire document
 .           : repeat previous command
 :&     : redo last substitution
-@     :repear last ": command"
+@     :repeat last ": command"
 :vs     : vertical split
 :sp     : horizontal split
 gv      : reselect last visual area (super useful)
