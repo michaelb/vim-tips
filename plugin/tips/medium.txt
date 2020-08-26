@@ -30,3 +30,5 @@ CTRL + ]     : jump to definition of function under cursor (need tags)
 g<C-G>     :count words/lines in file
 :sav new_name     : save file as filename
 CTRL + w + w ....    : cycle splits
+?      : jump to definition tag (call ALEGoToDefinition)
+CTRL + T     : jump back from definition tag to old position
