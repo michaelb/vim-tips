@@ -15,15 +15,21 @@ import re
 Tip_list = []
 
 
+
 def translate(line):
-    line = re.sub("<CR>","", line)
-    line = re.sub("<silent>","", line)
-    line = re.sub("<Nop>","", line)
-    if line == "" : return ""
-    if line[len(line) - len(line.lstrip())] == "\"": return ""
+    line = re.sub("<CR>", "", line)
+    line = re.sub("<silent>", "", line)
+    line = re.sub("<Nop>", "", line)
+    if line == "":
+        return ""
+    if re.sub(" ", "", line) == "":
+        return ""
+    if line[len(line) - len(line.lstrip())] == "\"":
+        return ""
 
     sline = line.split()
-    if sline[0] == "Plug" : return ""
+    if sline[0] == "Plug":
+        return ""
 
     cleaned_sline = []
     for word in sline:
@@ -32,22 +38,19 @@ def translate(line):
         else:
             cleaned_sline.append(word)
     sline = cleaned_sline
-    if len(sline)<=3 : return ""
+    if len(sline) <= 3:
+        return ""
 
+    if sline[0] == "nnoremap":
+        return sline[1] + "  " + " ".join(sline[2:]) + "  (normal mode)"
 
-    if sline[0] == "nnoremap" :
-        return sline[1] + "  " + sline[2:].join(" ") +"  (normal mode)"
-
-    if sline[0] == "vnoremap" :
-        return sline[1] + "  " + sline[2:].join(" ") +"  (visual mode)"
+    if sline[0] == "vnoremap":
+        return sline[1] + "  " + " ".join(sline[2:]) + "  (visual mode)"
 
     if sline[0] == "command" or sline[0] == "command!":
-        return ":" + sline[1] + "  " + sline[2:].join(" ")
-
-    if sline[0] == "map" :
-        return sline[1] + "  " + sline[2:].join(" ")
-
-
+        return ":" + sline[1] + "  " + " ".join(sline[2:])
+    if sline[0] == "map":
+        return sline[1] + "  " + " ".join(sline[2:])
 
 
 
