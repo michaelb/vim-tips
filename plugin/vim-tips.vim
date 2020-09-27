@@ -36,16 +36,16 @@ def translate(line):
 
 
     if sline[0] == "nnoremap" :
-        return sline[1] + "  " + sline[2..].join(" ") +"  (normal mode)"
+        return sline[1] + "  " + sline[2:].join(" ") +"  (normal mode)"
 
     if sline[0] == "vnoremap" :
-        return sline[1] + "  " + sline[2..].join(" ") +"  (visual mode)"
+        return sline[1] + "  " + sline[2:].join(" ") +"  (visual mode)"
 
     if sline[0] == "command" or sline[0] == "command!":
-        return ":" + sline[1] + "  " + sline[2..].join(" ")
+        return ":" + sline[1] + "  " + sline[2:].join(" ")
 
     if sline[0] == "map" :
-        return sline[1] + "  " + sline[2..].join(" ")
+        return sline[1] + "  " + sline[2:].join(" ")
 
 
 
