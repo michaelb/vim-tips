@@ -16,9 +16,9 @@ Tip_list = []
 
 
 def translate(line):
-    line = re.sub("<CR>", line)
-    line = re.sub("<silent>", line)
-    line = re.sub("<Nop>", line)
+    line = re.sub("<CR>","", line)
+    line = re.sub("<silent>","", line)
+    line = re.sub("<Nop>","", line)
     if line == "" : return ""
     if line[len(line) - len(line.lstrip())] == "\"": return ""
 
