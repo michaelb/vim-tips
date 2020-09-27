@@ -73,7 +73,7 @@ else:
 
     translated_list = [ translate(line) for line in Tip_list if (translate(line) != "" and translate(line) != None)]
     tline = random.choice(translated_list)
-    print("Config =>  "+tline[0],end="")
+    print("Config =>  "+tline, type(tline),end="")
 EOF
 endfunction
 
