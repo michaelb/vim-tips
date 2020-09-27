@@ -20,3 +20,14 @@ You may find them on your own system (probably in your plugin manager's files), 
 ## Important note
 
 If you are using a autoload session restore (from mksession) it displays a message and therefore hide the vim-tips message
+
+## Your own mappings
+
+vim-tips reads from your vim/neovim config file and displays the lines it recognizes.
+
+For example;
+`nnoremap gd :ALEGoToDefinition`
+will display the tip "Config => gd :ALEGoToDefinition (normal mode)".
+
+If you'd like to display tips (versus mappings from your own config file), you can adjust the frequency via
+`let g:vim_tips_tips_frequency=0.5` (with a value between 0.0 and 1.0, higher value increase tips frequency)
