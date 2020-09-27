@@ -72,8 +72,9 @@ else:
             Tip_list.append(line)
 
     translated_list = [ translate(line) for line in Tip_list if (translate(line) != "" and translate(line) != None)]
-    tline = random.choice(translated_list)
-    print("Config =>  " + tline)
+    if len(translated_list) > 0:
+        tline = random.choice(translated_list)
+        print("Config =>  " + tline)
 EOF
 endfunction
 
