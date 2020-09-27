@@ -3,4 +3,4 @@
 :g/green/d       : delete all lines containing "green"
 :v/green/d       : delete all lines not containing "green"
 :v/./.,/./-1join : compress empty lines
-:g/search_pattern/#              : display with line numbers (YOU WANT THIS!)
+:g/search_pattern/#              : display with line numbers

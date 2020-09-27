@@ -1,5 +1,4 @@
 :%!sort -u           : contents of the current file is sorted and only unique lines are kept
 !1} sort             : sorts paragraph; this is issued from normal mode!)
-
 !sort              : sort lines selected in visual range
 !grep word         : keep only lines containing 'word' in the selected visual range.

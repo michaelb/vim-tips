@@ -2,4 +2,3 @@ diw     : Delete Inside Word
 ciw     : Change Inside Word
 di(     : Delete Inside parenthesis
 dt"     : Delete Till quote
-ciw     : Change Inside Sentence (separated by blank line)

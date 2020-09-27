@@ -1,4 +1,4 @@
-'.       : jump to last modification line (SUPER)
+'.       : jump to last modification line
 `.       : jump to exact spot in last modification line
 <C-O>    : retrace your movements in file (backward)
 <C-I>    : retrace your movements in file (forward)
