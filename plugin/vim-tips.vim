@@ -67,13 +67,13 @@ if random.random() < float(vim.eval("g:vim_tips_tips_frequency")):
 
     print("Tip =>  "+random.choice(Tip_list), end="")
 else:
-    with open(vim.eval("s:vimrc"),"r") as f:
-        for line in f.readlines():
+     with open(vim.eval("s:vimrc"),"r") as f:
+       for line in f.readlines():
             Tip_list.append(line)
 
-            #translated_list = [ translate(line) for line in Tip_list if (translate(line) != "" and translate(line) != None)]
-            #tline = random.choice(translated_list)
-    print("Config =>  ",end="")
+    translated_list = [ translate(line) for line in Tip_list if (translate(line) != "" and translate(line) != None)]
+    tline = random.choice(translated_list)
+    print("Config =>  " + tline)
 EOF
 endfunction
 
