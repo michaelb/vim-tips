@@ -2,7 +2,7 @@ if exists("g:vim_tips")
     finish
 endif
 let g:vim_tips= 1
-let g:vim_tips_tips_frequency=0.001
+let g:vim_tips_tips_frequency=0.5
 
 
 let s:script_dir = fnamemodify(resolve(expand('<sfile>', ':p')), ':h')
@@ -27,7 +27,7 @@ def translate(line):
 
     cleaned_sline = []
     for word in sline:
-        if word[0] == "\"":
+        if len(word) == 0 or word[0] == "\"":
             break
         else:
             cleaned_sline.append(word)
