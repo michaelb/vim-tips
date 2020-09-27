@@ -1,4 +1,5 @@
 import re
+import random
 
 
 def translate(line):
@@ -44,7 +45,6 @@ with open("/home/michael/.config/nvim/init.vim", "r") as f:
         Tip_list.append(line)
 
     translated_list = [translate(line)
-                       for line in Tip_list if translate(line) != ""]
+                       for line in Tip_list if translate(line) != "" and translate(line) != None]
     # line = random.choice(translated_list)
-    for tline in translated_list:
-        print(tline)
+    print(random.choice(translated_list))
