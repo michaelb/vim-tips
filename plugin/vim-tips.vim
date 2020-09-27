@@ -71,9 +71,9 @@ else:
         for line in f.readlines():
             Tip_list.append(line)
 
-    translated_list = [ translate(line) for line in Tip_list if (translate(line) != "" and translate(line) != None)]
-    tline = random.choice(translated_list)
-    print("Config =>  "+tline + str(type(tline)),end="")
+            #translated_list = [ translate(line) for line in Tip_list if (translate(line) != "" and translate(line) != None)]
+            #tline = random.choice(translated_list)
+    print("Config =>  ",end="")
 EOF
 endfunction
 

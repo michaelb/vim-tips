@@ -48,3 +48,4 @@ with open("/home/michael/.config/nvim/init.vim", "r") as f:
                        for line in Tip_list if translate(line) != "" and translate(line) != None]
     # line = random.choice(translated_list)
     print(random.choice(translated_list))
+    print(type(random.choice(translated_list)))
