@@ -1,0 +1,7 @@
+V    : select entire lines
+C-v    : select as bloc (columns)
+gv    : relesect last visual selection
+v%       : selects matching parenthesis
+vi{      : selects matching curly brace
+vi"      : selects text between double quotes
+vi'      : selects text between single quotes

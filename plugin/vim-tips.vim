@@ -56,7 +56,7 @@ def translate(line):
 
 
 
-List_files=["medium.txt", "globals.txt", "eastereggs.txt", "moving.txt", "markers.txt", "phrases.txt", "external.txt", "miscallenous.txt"]
+List_files=["medium.txt", "globals.txt", "eastereggs.txt", "moving.txt", "markers.txt", "phrases.txt", "external.txt", "miscallenous.txt","selection.txt"]
 
 
 if random.random() < float(vim.eval("g:vim_tips_tips_frequency")):

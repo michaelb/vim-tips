@@ -1,3 +1,34 @@
 CTRL + F     : move one page down (Forward)
 CTRL + B     : move one page up (Backward)
 zz     : recenter page around cursor
++     : go to the next line
+h       : move left
+j       : move down
+k       : move up
+l       : move right
+w       : jump by start of words (punctuation considered words)
+W       : jump by words (spaces separate words)
+e       : jump to end of words (punctuation considered words)
+E       : jump to end of words (no punctuation)
+b       : jump backward by words (punctuation considered words)
+B       : jump backward by words (no punctuation)
+ge      : jump backward to end of words
+0       : (zero) start of line
+^       : first non-blank character of line
+$       : end of line
+-       : move line upwards, on the first non blank character
++       : move line downwards, on the first non blank character
+<enter>      : move line downwards, on the first non blank character
+gg      : go to first line
+G       : go to last line
+nG      : go To line n
+:n      : go To line n
+)       : move the cursor forward to the next sentence.
+(       : move the cursor backward by a sentence.
+{       : move the cursor a paragraph backwards
+}       : move the cursor a paragraph forwards
+]]      : move the cursor a section forwards or to the next {
+[[      : move the cursor a section backwards or the previous {
+H       : move the cursor to the top of the screen.
+M       : move the cursor to the middle of the screen.
+L       : move the cursor to the bottom of the screen.
