@@ -22,6 +22,7 @@ G=gg          : auto (re)indent entire document
 :&     : redo last substitution
 @     :repeat last ": command"
 :vs     : vertical split
+:vs filename     : open "filename" in new vertical split
 :sp     : horizontal split
 gv      : reselect last visual area (super useful)
 o      : navigate visual area (after visual selection)
@@ -30,5 +31,9 @@ CTRL + ]     : jump to definition of function under cursor (need tags)
 g<C-G>     :count words/lines in file
 :sav new_name     : save file as filename
 CTRL + w + w ....    : cycle splits
+ls     : show current buffer
+b number     : open buffer #number in this window
 ?      : jump to definition tag (call ALEGoToDefinition)
 CTRL + T     : jump back from definition tag to old position
+:r [name]      : insert the file [name] below the cursor.
+:r !{cmd}      : execute {cmd} and insert its standard output below the cursor.

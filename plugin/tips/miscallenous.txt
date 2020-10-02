@@ -4,3 +4,5 @@ CTRL + w + =      :resize splits equally
 :new file.txt     : open file.txt in new split
 gt      : show next tab
 =%      : indent code between parenthesis
+C-w      : (in insert mode) erases word from start to position
+C-u      : (in insert mode) erases line from start to position

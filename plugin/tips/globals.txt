@@ -4,3 +4,6 @@
 :v/green/d       : delete all lines not containing "green"
 :v/./.,/./-1join : compress empty lines
 :g/search_pattern/#              : display with line numbers
+g~iw     : switch case of current word
+gUiw     : make current word uppercase
+guiw     : make current word lowercase
