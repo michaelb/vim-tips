@@ -5,8 +5,6 @@ A simple plugin that display a tip at startup, no configuration required
 
 ## Installation
 
-(recommended)
-
 Use your favorite plugin manager; ex `vim-plug`:
 
 ```vim
@@ -22,7 +20,7 @@ You may find them on your own system (probably in your plugin manager's files), 
 
 ## Important note
 
-If you are using a autoload session restore (from mksession) it displays a message and therefore hide the vim-tips message
+If you are using an autoload session restore (from mksession) it displays a message and therefore hide the vim-tips message
 
 ## Your own mappings
 
