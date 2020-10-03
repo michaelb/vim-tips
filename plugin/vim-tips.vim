@@ -1,8 +1,4 @@
-if exists("g:vim_tips")
-    finish
-endif
-let g:vim_tips= 1
-let g:vim_tips_tips_frequency=0.5
+let s:vim_tips_tips_frequency=get(g:,'vim_tips_tips_frequency',0.5)
 
 
 let s:script_dir = fnamemodify(resolve(expand('<sfile>', ':p')), ':h')
@@ -59,9 +55,9 @@ def translate(line):
 
 
 List_files=["medium.txt", "globals.txt", "eastereggs.txt", "moving.txt", "markers.txt", "phrases.txt", "external.txt", "miscallenous.txt","selection.txt"]
+print(float(vim.eval("g:vim_tips_tips_frequency")))
 
-
-if random.random() < float(vim.eval("g:vim_tips_tips_frequency")):
+if random.random() < float(vim.eval("s:vim_tips_tips_frequency")):
     filename = random.choice(List_files)
     pathfile = os.path.join(vim.eval("s:script_dir"),"tips",filename)
     with open(pathfile, "r") as f:
