@@ -12,6 +12,8 @@ Use your favorite plugin manager; ex `vim-plug`:
 Plug 'michaelb/vim-tips'
 ```
 
+You need a python(3+)-enabled vim/neovim
+
 ## Add your own tips
 
 If you want, you can add your own tips by modifying the files in the tips folder.
