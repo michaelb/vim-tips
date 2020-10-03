@@ -12,6 +12,7 @@ python3 << EOF
 import random
 import vim
 import re
+import os
 Tip_list = []
 
 
@@ -61,7 +62,8 @@ List_files=["medium.txt", "globals.txt", "eastereggs.txt", "moving.txt", "marker
 
 if random.random() < float(vim.eval("g:vim_tips_tips_frequency")):
     filename = random.choice(List_files)
-    with open(vim.eval("s:script_dir")+"/tips/"+filename, "r") as f:
+    pathfile = os.path.join(vim.eval("s:script_dir"),"tips",filename)
+    with open(pathfile, "r") as f:
         for line in f.readlines():
                 Tip_list.append(line)
 
