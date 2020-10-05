@@ -1,3 +1,4 @@
+
 let s:vim_tips_tips_frequency=get(g:,'vim_tips_tips_frequency',0.5)
 
 
@@ -55,7 +56,7 @@ def translate(line):
 
 
 List_files=["medium.txt", "globals.txt", "eastereggs.txt", "moving.txt", "markers.txt", "phrases.txt", "external.txt", "miscallenous.txt","selection.txt"]
-print(float(vim.eval("g:vim_tips_tips_frequency")))
+print(float(vim.eval("s:vim_tips_tips_frequency")))
 
 if random.random() < float(vim.eval("s:vim_tips_tips_frequency")):
     filename = random.choice(List_files)
