@@ -30,7 +30,7 @@ echo tip
 If you want, you can add your own tips by modifying the files in the tips folder.
 You may find them on your own system (probably in your plugin manager's files), but to simplify that I suggest forking my repo and adding your own changes in a version controlled repo.
 
-Tips must escape single quotes. (Just avoid them in general)
+Tips must not contain single quotes or exceed 70 characters
 
 ## Important note
 

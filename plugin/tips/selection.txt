@@ -2,4 +2,5 @@ V    : select entire lines
 C-v    : select as bloc (columns)
 gv    : relesect last visual selection
 v%       : selects matching parenthesis
-vi{      : selects inside matching curly braces, also work with quotes & brackets
+vi{      : selects inside matching curly braces,
+vi"      : select inside matching quotes
