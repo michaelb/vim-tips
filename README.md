@@ -12,7 +12,7 @@ Use your favorite plugin manager; ex `vim-plug`:
 Plug 'michaelb/vim-tips'
 ```
 
-You need a python(3+)-enabled vim/neovim
+You need a python(3+)-enabled vim/neovim. Other than that vim-tips should be, vim (incl <8), neovim,  linux, macOS and windows compatible
 
 ## Usage
 
@@ -44,5 +44,5 @@ For example;
 `nnoremap gd :ALEGoToDefinition`
 will display the tip "Config => gd :ALEGoToDefinition (normal mode)".
 
-If you'd like to display tips (versus mappings from your own config file), you can adjust the frequency via
+If you'd like to display tips more often (and see less mappings from your own config file), you can adjust the tips frequency via
 `let g:vim_tips_tips_frequency=0.5` (with a value between 0.0 and 1.0, higher value increase tips frequency)
