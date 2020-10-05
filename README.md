@@ -2,7 +2,6 @@
 
 A simple plugin that display a tip at startup, no configuration required
 
-
 ![](example.png)
 
 ## Installation
@@ -15,6 +14,17 @@ Plug 'michaelb/vim-tips'
 
 You need a python(3+)-enabled vim/neovim
 
+## Usage
+
+vim-tips prints a message in the command area at startup.
+
+However, you can request tips by calling the function `GetTip()` to get a string value usable in vimscript. Ex:
+
+```
+let tip = GetTip()
+echo tip
+```
+
 ## Add your own tips
 
 If you want, you can add your own tips by modifying the files in the tips folder.
@@ -22,7 +32,7 @@ You may find them on your own system (probably in your plugin manager's files), 
 
 ## Important note
 
-If you are using an autoload session restore (from mksession) it displays a message and therefore hide the vim-tips message
+If you are using an autoload session restore (from mksession) it displays a message and therefore hide the vim-tips message.
 
 ## Your own mappings
 

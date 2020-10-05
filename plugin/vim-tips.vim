@@ -90,10 +90,3 @@ endfunction
 
 
 autocmd VimEnter * call DisplayTip()
-
-
-
-
-
-
-
