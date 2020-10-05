@@ -4,7 +4,8 @@ let s:vim_tips_tips_frequency=get(g:,'vim_tips_tips_frequency',0.5)
 
 let s:script_dir = fnamemodify(resolve(expand('<sfile>', ':p')), ':h')
 let s:vimrc = $MYVIMRC
-function! DisplayTip()
+function! GetTip()
+  let s:tip = ""
 python3 << EOF
 import random
 import vim
@@ -53,29 +54,38 @@ def translate(line):
         return sline[1] + "  " + " ".join(sline[2:])
 
 
+def tip():
+  List_files=["medium.txt", "globals.txt", "eastereggs.txt", "moving.txt", "markers.txt", "phrases.txt", "external.txt", "miscallenous.txt","selection.txt"]
+  # print(float(vim.eval("s:vim_tips_tips_frequency")))
 
+  if random.random() < float(vim.eval("s:vim_tips_tips_frequency")):
+      filename = random.choice(List_files)
+      pathfile = os.path.join(vim.eval("s:script_dir"),"tips",filename)
+      with open(pathfile, "r") as f:
+          for line in f.readlines():
+                  Tip_list.append(line.rstrip())
 
-List_files=["medium.txt", "globals.txt", "eastereggs.txt", "moving.txt", "markers.txt", "phrases.txt", "external.txt", "miscallenous.txt","selection.txt"]
-# print(float(vim.eval("s:vim_tips_tips_frequency")))
+      return "Tip =>  "+random.choice(Tip_list)
+  else:
+      with open(vim.eval("s:vimrc"),"r") as f:
+          for line in f.readlines():
+              Tip_list.append(line)
 
-if random.random() < float(vim.eval("s:vim_tips_tips_frequency")):
-    filename = random.choice(List_files)
-    pathfile = os.path.join(vim.eval("s:script_dir"),"tips",filename)
-    with open(pathfile, "r") as f:
-        for line in f.readlines():
-                Tip_list.append(line)
+      translated_list = [ translate(line) for line in Tip_list if (translate(line) != "" and translate(line) != None)]
+      if len(translated_list) > 0:
+          tline = random.choice(translated_list)
+          return "Config =>  " + tline.rstrip()
 
-    print("Tip =>  "+random.choice(Tip_list), end="")
-else:
-    with open(vim.eval("s:vimrc"),"r") as f:
-        for line in f.readlines():
-            Tip_list.append(line)
-
-    translated_list = [ translate(line) for line in Tip_list if (translate(line) != "" and translate(line) != None)]
-    if len(translated_list) > 0:
-        tline = random.choice(translated_list)
-        print("Config =>  " + tline)
+s = tip()
+vim.command("let s:tip ='%s'"%s)
 EOF
+
+  return s:tip
+endfunction
+
+
+function DisplayTip()
+  echo GetTip()
 endfunction
 
 
