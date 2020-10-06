@@ -25,6 +25,9 @@ let tip = GetTip()
 echo tip
 ```
 
+Don't forget to load vim-tips beforehand if necessary (you need it at startup) by preceding calls to GetTip() by a 
+`runtime plugin/vim-tips.vim`
+
 ## Add your own tips
 
 If you want, you can add your own tips by modifying the files in the tips folder.
