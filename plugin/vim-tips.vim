@@ -1,10 +1,14 @@
+if exists("g:vim_tips")
+    finish
+endif
+let g:vim_tips= 1
 
 let s:vim_tips_tips_frequency=get(g:,'vim_tips_tips_frequency',0.5)
 
 
 let s:script_dir = fnamemodify(resolve(expand('<sfile>', ':p')), ':h')
 let s:vimrc = $MYVIMRC
-function! GetTip()
+function! g:GetTip()
   let s:tip = ""
 python3 << EOF
 import random
@@ -85,7 +89,7 @@ endfunction
 
 
 function DisplayTip()
-  echo GetTip()
+  echo g:GetTip()
 endfunction
 
 
