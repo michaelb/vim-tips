@@ -4,6 +4,7 @@ endif
 let g:vim_tips= 1
 
 let s:vim_tips_tips_frequency=get(g:,'vim_tips_tips_frequency',0.5)
+let s:vim_tips_display_at_startup=get(g:,'vim_tips_display_at_startup',1)
 
 
 let s:script_dir = fnamemodify(resolve(expand('<sfile>', ':p')), ':h')
@@ -94,5 +95,7 @@ endfunction
 
 
 if has('python3')
-  autocmd VimEnter * call DisplayTip()
+  if s:vim_tips_display_at_startup
+    autocmd VimEnter * call DisplayTip()
+  endif
 endif
