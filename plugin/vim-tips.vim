@@ -93,4 +93,6 @@ function DisplayTip()
 endfunction
 
 
-autocmd VimEnter * call DisplayTip()
+if has('python3')
+  autocmd VimEnter * call DisplayTip()
+endif
