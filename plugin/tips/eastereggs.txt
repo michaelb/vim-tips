@@ -3,7 +3,6 @@
 :help!      :Easter Egg
 :help map-modes      :Easter Egg
 :help UserGettingBored      :Easter Egg
-:help spoon     :Easter Egg
 :help showmatches     :Easter Egg
 :Ni!     :Easter Egg
 :help bar
