@@ -82,7 +82,9 @@ def tip():
           return "Config =>  " + tline.rstrip()
 
 s = tip()
-vim.command("let s:tip ='%s'"%s)
+s = s.replace("\\", "\\\\")
+s = s.replace("\"", "\\\"")
+vim.command("let s:tip =\"%s\""%s)
 EOF
 
   return s:tip
