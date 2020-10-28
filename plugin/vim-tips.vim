@@ -59,11 +59,11 @@ def translate(line):
         return sline[1] + "  " + " ".join(sline[2:])
 
 
-def tip():
+def tip(force_tip=False):
   List_files=["medium.txt", "globals.txt", "eastereggs.txt", "moving.txt", "markers.txt", "phrases.txt", "external.txt", "miscallenous.txt","selection.txt"]
   # print(float(vim.eval("s:vim_tips_tips_frequency")))
 
-  if random.random() < float(vim.eval("s:vim_tips_tips_frequency")):
+  if force_tip or random.random() < float(vim.eval("s:vim_tips_tips_frequency")):
       filename = random.choice(List_files)
       pathfile = os.path.join(vim.eval("s:script_dir"),"tips",filename)
       with open(pathfile, "r") as f:
@@ -80,6 +80,9 @@ def tip():
       if len(translated_list) > 0:
           tline = random.choice(translated_list)
           return "Config =>  " + tline.rstrip()
+
+  # in case something failed (eg translated_list is empty), try something else
+  return tip(True)
 
 s = tip()
 s = s.replace("\\", "\\\\")
