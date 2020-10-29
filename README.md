@@ -50,3 +50,7 @@ If you'd like to display tips more often (and see less mappings from your own co
 ## Hiding the message at startup
 
 You can specify `let g:vim_tips_display_at_startup=0` (default :`1`) to not have a message displayed at startup. You can then get tips by using the `GetTip()` function
+
+##Special thanks
+
+To @R0LA1mRifcF8yAkk and @Kamilcuk who have opened so many relevant issues, and helped me catch edge cases and suggested improvements.
