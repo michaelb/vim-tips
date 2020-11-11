@@ -32,3 +32,4 @@ nG      : go To line n
 H       : move the cursor to the top of the screen.
 M       : move the cursor to the middle of the screen.
 L       : move the cursor to the bottom of the screen.
+%       : move to matching bracket/parenthesis
