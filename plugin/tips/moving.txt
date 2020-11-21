@@ -23,13 +23,17 @@ gg      : go to first line
 G       : go to last line
 nG      : go To line n
 :n      : go To line n
-)       : move the cursor forward to the next sentence.
-(       : move the cursor backward by a sentence.
+)       : move the cursor forward to the next sentence
+(       : move the cursor backward by a sentence
 {       : move the cursor a paragraph backwards
 }       : move the cursor a paragraph forwards
 ]]      : move the cursor a section forwards or to the next {
 [[      : move the cursor a section backwards or the previous {
 H       : move the cursor to the top of the screen.
-M       : move the cursor to the middle of the screen.
-L       : move the cursor to the bottom of the screen.
+M       : move the cursor to the middle of the screen
+L       : move the cursor to the bottom of the screen
 %       : move to matching bracket/parenthesis
+[m      : move to beginning of previous method / block
+[M      : move to end of previous method / block
+]m      : move to beginning of next method / block
+]M      : move to end of next method / block
