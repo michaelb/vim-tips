@@ -37,3 +37,7 @@ L       : move the cursor to the bottom of the screen
 [M      : move to end of previous method / block
 ]m      : move to beginning of next method / block
 ]M      : move to end of next method / block
+g;      : jump to next change
+g,      : jump to previous change
+CTRL + o     : go to previous cursor position
+CTRL + i     : go to next cursor position
