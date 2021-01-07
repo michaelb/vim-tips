@@ -95,6 +95,7 @@ endfunction
 
 
 function DisplayTip()
+  sleep 100m
   echo g:GetTip()
 endfunction
 
