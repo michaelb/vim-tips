@@ -4,6 +4,7 @@ endif
 let g:vim_tips= 1
 
 let s:vim_tips_tips_frequency=get(g:,'vim_tips_tips_frequency',0.5)
+let s:vim_tips_display_at_startup=get(g:,'vim_tips_display_at_startup',1)
 
 
 let s:script_dir = fnamemodify(resolve(expand('<sfile>', ':p')), ':h')
@@ -58,11 +59,11 @@ def translate(line):
         return sline[1] + "  " + " ".join(sline[2:])
 
 
-def tip():
+def tip(force_tip=False):
   List_files=["medium.txt", "globals.txt", "eastereggs.txt", "moving.txt", "markers.txt", "phrases.txt", "external.txt", "miscallenous.txt","selection.txt"]
   # print(float(vim.eval("s:vim_tips_tips_frequency")))
 
-  if random.random() < float(vim.eval("s:vim_tips_tips_frequency")):
+  if force_tip or random.random() < float(vim.eval("s:vim_tips_tips_frequency")):
       filename = random.choice(List_files)
       pathfile = os.path.join(vim.eval("s:script_dir"),"tips",filename)
       with open(pathfile, "r") as f:
@@ -80,8 +81,13 @@ def tip():
           tline = random.choice(translated_list)
           return "Config =>  " + tline.rstrip()
 
+  # in case something failed (eg translated_list is empty), try something else
+  return tip(True)
+
 s = tip()
-vim.command("let s:tip ='%s'"%s)
+s = s.replace("\\", "\\\\")
+s = s.replace("\"", "\\\"")
+vim.command("let s:tip =\"%s\""%s)
 EOF
 
   return s:tip
@@ -89,10 +95,13 @@ endfunction
 
 
 function DisplayTip()
+  sleep 100m
   echo g:GetTip()
 endfunction
 
 
 if has('python3')
-  autocmd VimEnter * call DisplayTip()
+  if s:vim_tips_display_at_startup
+    autocmd VimEnter * call DisplayTip()
+  endif
 endif

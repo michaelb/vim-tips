@@ -4,3 +4,4 @@ gv    : relesect last visual selection
 v%       : selects matching parenthesis
 vi{      : selects inside matching curly braces,
 vi"      : select inside matching quotes
+c%       : cut until end of next bracketed (,{,[ section
