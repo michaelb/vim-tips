@@ -12,7 +12,7 @@ Use your favorite plugin manager; ex `vim-plug`:
 Plug 'michaelb/vim-tips'
 ```
 
-You need a python(3+)-enabled vim/neovim. Other than that vim-tips should be, vim (incl <8), neovim, linux, macOS and windows compatible
+vim-tips should be, vim (incl <8), neovim, linux, macOS and windows compatible
 
 ## Usage
 
@@ -28,18 +28,15 @@ echo tip
 Don't forget to load vim-tips beforehand if necessary (you need it at startup) by preceding calls to GetTip() by a 
 `runtime plugin/vim-tips.vim`
 
-## Add your own tips
-
-If you want, you can add your own tips by modifying the files in the tips folder.
-You may find them on your own system (probably in your plugin manager's files), but to simplify that I suggest forking my repo and adding your own changes in a version controlled repo.
-
 Tips must not contain single quotes or exceed 70 characters
 
 ## Important note
 
 If you are using an autoload session restore (from mksession) it displays a message and therefore hide the vim-tips message.
 
-## Your own mappings
+
+
+## Your own mappings (deprecated for now, didn't work very well anyway)
 
 vim-tips reads from your vim/neovim config file and displays the lines it recognizes.
 
