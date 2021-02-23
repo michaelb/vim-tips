@@ -23,7 +23,6 @@ function GetTip()
   let s:number_categories = 9
   let s:chosen_category = s:random_number % s:number_categories
 
-  let s:prefix = "Tip => "
   let s:tip = ""
   if s:chosen_category == 0 
     let s:tip = GetEasterEgg()
@@ -44,7 +43,7 @@ function GetTip()
   elseif s:chosen_category == 8
     let s:tip = GetSelection()
   endif
-  return s:prefix.s:tip
+  return s:tip
 endfunction
 
 
@@ -118,7 +117,9 @@ function GetSelection()
 endfunction
 
 function DisplayTip()
-  echo g:GetTip()
+
+  let s:prefix = "Tip => "
+  echo s:prefix.g:GetTip()
 endfunction
 
 
