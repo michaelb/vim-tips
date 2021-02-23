@@ -28,7 +28,19 @@ echo tip
 Don't forget to load vim-tips beforehand if necessary (you need it at startup) by preceding calls to GetTip() by a 
 `runtime plugin/vim-tips.vim`
 
-Tips must not contain single quotes or exceed 70 characters
+## Add tips to vim-startify (courtesy of R0LA1mRifcF8yAkk)
+To display a tip (and not a quote) in your vim-startify you can include the following in your config file:
+
+`let g:startify_custom_header = 'startify#pad([GetTip()])'`
+
+You'll probably also want to deactivate the basic tip display at startup.
+
+## Add your own tips
+
+If you want, you can add your own tips by modifying the files in the tips folder.
+You may find them on your own system (probably in your plugin manager's files), but to simplify that I suggest forking my repo and adding your own changes in a version controlled repo.
+
+Tips must not exceed 70 characters
 
 ## Important note
 
