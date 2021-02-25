@@ -141,9 +141,14 @@ endfunction
 
 function PrepareNextConfig()
   let tmpfilepath = GetPathTmpFile()
-  silent !sleep 5 &
-  "instead, start here a bash/python script in background (&) that remove the first line
-  "of the tmpfile and if it is empty, populate it with the config fetched
+  if has('win32')
+    "nothing yet
+  else
+    " on UNIX-like OS
+    silent !sleep 5 &
+    "instead, start here a bash/python script in background (&) that remove the first line
+    "of the tmpfile and if it is empty, populate it with the config fetched
+  endif
 endfunction
 
 
@@ -166,9 +171,6 @@ function DisplayTipOrConfig()
     "got a proper mapping
     let s:prefix = "Config =>"
     echo s:prefix.s:configtip
-
-
-
     call PrepareNextConfig()
   endif
 endfunction
