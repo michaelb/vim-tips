@@ -116,13 +116,33 @@ function GetSelection()
   return s:tiplist[s:index]
 endfunction
 
-function DisplayTip()
 
-  let s:prefix = "Tip => "
-  echo s:prefix.g:GetTip()
+
+function GetConfig()
+
+  let tmpfilepath = resolve(expand('<sfile>:p:h')).'/tmp_config'
+  let s:configlist = readfile(tmpfilepath)
+  let s:config= s:configlist[0]
+  return s:config
+endfunction
+
+
+
+
+
+
+
+function DisplayTipOrConfig()
+  let s:very_random_float = (Rand() % 100)
+  if s:vim_tips_tips_frequency * 100> s:very_random_float
+    let s:prefix = "Tip => "
+    echo s:prefix.g:GetTip()
+  else 
+    echo GetConfig()
+  endif
 endfunction
 
 
 if s:vim_tips_display_at_startup
-  autocmd VimEnter * call DisplayTip()
+  autocmd VimEnter * call DisplayTipOrConfig()
 endif
