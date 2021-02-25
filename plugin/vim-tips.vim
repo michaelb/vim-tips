@@ -13,6 +13,7 @@ let s:vimrc = $MYVIMRC
 
 
 function Rand()
+    "ok-tier rng
     return str2nr(matchstr(reltimestr(reltime()), '\v\.@<=\d+')[1:])
 endfunction
 
@@ -117,28 +118,58 @@ function GetSelection()
 endfunction
 
 
+function GetPathTmpFile()
+  if has('win32')
+    let tmpfilepath = resolve(expand('<sfile>:p:h')).'\tmp_config'
+  else
+    let tmpfilepath = resolve(expand('<sfile>:p:h')).'/tmp_config'
+  endif
+  return tmpfilepath
+endfunction
 
 function GetConfig()
-
-  let tmpfilepath = resolve(expand('<sfile>:p:h')).'/tmp_config'
-  let s:configlist = readfile(tmpfilepath)
-  let s:config= s:configlist[0]
+  try
+    let tmpfilepath =GetPathTmpFile()
+    let s:configlist = readfile(tmpfilepath)
+    let s:config= s:configlist[0]
+  catch
+    return ""
+  endtry
   return s:config
+endfunction
+
+
+function PrepareNextConfig()
+  let tmpfilepath = GetPathTmpFile()
+  silent !sleep 5 &
+  "instead, start here a bash/python script in background (&) that remove the first line
+  "of the tmpfile and if it is empty, populate it with the config fetched
 endfunction
 
 
 
 
-
-
-
 function DisplayTipOrConfig()
-  let s:very_random_float = (Rand() % 100)
+  let s:very_random_float = (Rand() % 100) +150
   if s:vim_tips_tips_frequency * 100> s:very_random_float
     let s:prefix = "Tip => "
     echo s:prefix.g:GetTip()
   else 
-    echo GetConfig()
+    let s:configtip = GetConfig()
+    if s:configtip == "" "failed to get a proper mapping, return a normal tip instead
+      let s:prefix = "Tip => "
+      echo s:prefix.g:GetTip()
+      return
+    endif
+
+
+    "got a proper mapping
+    let s:prefix = "Config =>"
+    echo s:prefix.s:configtip
+
+
+
+    call PrepareNextConfig()
   endif
 endfunction
 
