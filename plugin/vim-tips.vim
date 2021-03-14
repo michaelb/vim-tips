@@ -89,7 +89,7 @@ endfunction
 
 
 function GetMiscallenous()
- let s:tiplist =[":w! sudo tee %      :write as root (ask password)","CTRL + w + =      :resize splits equally","[[      : jump to function start",":new file.txt     : open file.txt in new split","gt      : show next tab","=%      : indent code between parenthesis","C-w      : (in insert mode) erases word from start to position","C-u      : (in insert mode) erases line from start to position","//       : run your previous search","CTRL + w + x     : exchange with next window",]
+ let s:tiplist =[":w! sudo tee %      :write as root (ask password)","CTRL + w + =      :resize splits equally","[[      : jump to function start",":new file.txt     : open file.txt in new split","gt      : show next tab","=%      : indent code between parenthesis","C-w      : (in insert mode) erases word from start to position","C-u      : (in insert mode) erases line from start to position","//       : run your previous search","CTRL + w + x     : exchange with next window", "C-k (+characters)     : insert digraphs (æ,π...) in insert mode","C-K-*-p        : insert π (in insert mode)",]
   let s:index = Rand() % len(s:tiplist)
   return s:tiplist[s:index]
 endfunction

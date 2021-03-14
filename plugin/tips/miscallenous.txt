@@ -7,4 +7,6 @@ gt      : show next tab
 C-w      : (in insert mode) erases word from start to position
 C-u      : (in insert mode) erases line from start to position
 //       : run your previous search
-CTRL + w + x     : exchange with next window
+C-w-x     : exchange with next window
+C-k (+characters)     : insert digraphs (æ,π...) in insert mode
+C-K-*-p        : insert π (in insert mode)
