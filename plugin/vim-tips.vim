@@ -21,7 +21,7 @@ endfunction
 
 function GetTip()
   let s:random_number = Rand()
-  let s:number_categories = 9
+  let s:number_categories = 10
   let s:chosen_category = s:random_number % s:number_categories
 
   let s:tip = ""
@@ -43,6 +43,8 @@ function GetTip()
     let s:tip = GetPhrases()
   elseif s:chosen_category == 8
     let s:tip = GetSelection()
+  elseif s:chosen_category == 9
+    let s:tip = GetOtherModes()
   endif
   return s:tip
 endfunction
@@ -78,6 +80,11 @@ function GetMarkers()
   return s:tiplist[s:index]
 endfunction
 
+function GetOtherModes()
+  let s:tiplist = ["C-k (+characters)     : insert digraphs (æ,π...) in insert mode","C-K * p      : insert π (in insert mode)","C-K Eu       : insert € (in insert mode)","C-K +-       : insert ± (in insert mode)","C-K OK       : insert ✓ (in insert mode)","C-K XX       : insert ✗ (in insert mode)","C-K AN       : insert ∧ ('and' symbol) (in insert mode)","C-K OR       : insert ∨ ('or' symbol) (in insert mode)","C-K (-       : insert ∈ (in insert mode)","C-a          : insert the last content inserted (in insert mode)","C-@          : insert the last content insert and quit insert mode (in insert mode)","C-h          : delete character before the cursor (in insert mode)","C-l          : delete  character after the cursor (like Del) (in insert mode)","C-w          : delete word under cursor (in insert mode)","C-o          : execute one normal or command-mode and return to insert (in insert mode)","o            : move cursor to opposite side of selection (in visual mode)","U            : Uppercase the selection","C-v          : Change to visual-bloc mode (from visual mode)","S-v      : Change to visual mode (from visual-bloc mode)",]
+  let s:index = Rand() % len(s:tiplist)
+  return s:tiplist[s:index]
+endfunction
 
 
 
@@ -89,7 +96,7 @@ endfunction
 
 
 function GetMiscallenous()
- let s:tiplist =[":w! sudo tee %      :write as root (ask password)","CTRL + w + =      :resize splits equally","[[      : jump to function start",":new file.txt     : open file.txt in new split","gt      : show next tab","=%      : indent code between parenthesis","C-w      : (in insert mode) erases word from start to position","C-u      : (in insert mode) erases line from start to position","//       : run your previous search","CTRL + w + x     : exchange with next window", "C-k (+characters)     : insert digraphs (æ,π...) in insert mode","C-K-*-p        : insert π (in insert mode)",]
+ let s:tiplist =[":w! sudo tee %      :write as root (ask password)","CTRL + w + =      :resize splits equally","[[      : jump to function start",":new file.txt     : open file.txt in new split","gt      : show next tab","=%      : indent code between parenthesis","C-w      : (in insert mode) erases word from start to position","C-u      : (in insert mode) erases line from start to position","//       : run your previous search","CTRL + w + x     : exchange with next window", "set <option> ?     : see the value of a config option", "C-k (+characters)     : insert digraphs (æ,π...) in insert mode","C-K-*-p        : insert π (in insert mode)",]
   let s:index = Rand() % len(s:tiplist)
   return s:tiplist[s:index]
 endfunction
