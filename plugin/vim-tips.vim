@@ -51,7 +51,7 @@ endfunction
 
 
 function GetEasterEgg()
-  let s:tiplist = [ ":help 42     : Easter Egg", ":help holy-grail      :Easter Egg",":help!      :Easter Egg",":help map-modes      :Easter Egg",":help UserGettingBored      :Easter Egg",":help showmatches     :Easter Egg",":Ni!     :Easter E",]
+  let s:tiplist = [ ":help 42     : Easter Egg", ":help holy-grail      :Easter Egg",":help!      :Easter Egg",":help map-modes      :Easter Egg",":help UserGettingBored      :Easter Egg",":help showmatches     :Easter Egg",":Ni!     :Easter E",":smile      :Easter Egg",]
   let s:index = Rand() % len(s:tiplist)
   return s:tiplist[s:index]
 endfunction

@@ -5,3 +5,4 @@
 :help UserGettingBored      :Easter Egg
 :help showmatches     :Easter Egg
 :Ni!     :Easter Egg
+:smile     :Easter Egg
